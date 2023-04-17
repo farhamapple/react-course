@@ -3,7 +3,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import FavoritePage from "./pages/Favorite";
 import AllMeetupsPage from "./pages/AllMeetUps";
 import NewMeetupPage from "./pages/NewMeetUp";
-import MainNavigationPage from "./components/layout/MainNavigation";
+import Layout from "./components/layout/Layout";
 
 function App() {
   // localhost:3000/
@@ -11,13 +11,13 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <MainNavigationPage>
+        <Layout>
           <Routes>
             <Route path="/" element={<AllMeetupsPage />} />
             <Route path="new-meetup" element={<NewMeetupPage />} />
             <Route path="favorites" element={<FavoritePage />} />
           </Routes>
-        </MainNavigationPage>
+        </Layout>
       </BrowserRouter>
     </div>
   );
