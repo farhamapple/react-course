@@ -1,14 +1,24 @@
-
-import './App.css';
-import Todo from './components/Todo';
+import "./App.css";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import FavoritePage from "./pages/Favorite";
+import AllMeetupsPage from "./pages/AllMeetUps";
+import NewMeetupPage from "./pages/NewMeetUp";
+import MainNavigationPage from "./components/layout/MainNavigation";
 
 function App() {
+  // localhost:3000/
+
   return (
     <div>
-      <h1>My todos</h1>
-      <Todo text='Lear React'/>
-      <Todo text='Master React' />
-      <Todo text='Suhu React' />
+      <BrowserRouter>
+        <MainNavigationPage>
+          <Routes>
+            <Route path="/" element={<AllMeetupsPage />} />
+            <Route path="new-meetup" element={<NewMeetupPage />} />
+            <Route path="favorites" element={<FavoritePage />} />
+          </Routes>
+        </MainNavigationPage>
+      </BrowserRouter>
     </div>
   );
 }
